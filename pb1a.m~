@@ -1,0 +1,6 @@
+function x = pb1a(A,f,n) %xi(t)
+    fs = min(n) : 60/500 : max(n); %sampling period for impulse train
+    x1 = pulstran(n,fs,@rectpuls, 1e-2);
+    x = (A * sin(2 * pi * f * n)) .* x1;
+end
+
